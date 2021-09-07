@@ -6,4 +6,4 @@ before_install:
   - docker build -t notsimpletext/docker-react -f dockertfile.dev .
 
   script:
-    - docker run notsimpletext/docker-react npm run test -- --coverage
+    - docker run -e CI=true notsimpletext/docker-react npm run test
