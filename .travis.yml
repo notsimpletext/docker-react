@@ -1,13 +1,12 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
+language: generic
+
 sudo: required
+
 services:
   - docker
 
 before_install:
   - docker build -t notsimpletext/docker-react -f dockerfile.dev .
 
-  script:
+script:
     - docker run -e CI=true notsimpletext/docker-react npm run test -- --coverage
