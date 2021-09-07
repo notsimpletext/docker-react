@@ -9,7 +9,7 @@ before_install:
   - docker build -t notsimpletext/docker-react -f dockerfile.dev .
 
 script:
-  - docker run -e CI=true notsimpletext/docker-react npm run test -- --coverage
+  - docker run -e CI=true notsimpletext/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
