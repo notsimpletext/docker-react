@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t notsimpletext/docker-react -f dockertfile.dev .
+
+  script:
+    - docker run notsimpletext/docker-react npm run test -- --coverage
